@@ -1,0 +1,257 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body,
+input,
+button,
+textarea,
+select {
+  outline: none;
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+input {
+  line-height: normal;
+}
+button {
+  cursor: pointer;
+}
+body {
+  padding: 20px;
+  background-color: #191a2e;
+}
+/* animation */
+.ring {
+  width: 50px;
+  height: 50px;
+  border-radius: 100rem;
+  /* border: 5px solid #6a5af9; */
+  /* border-right: 5px solid transparent; */
+  /* border-left: 5px solid transparent; */
+  background-color: #6a5af9;
+  animation: spinner 1s infinite linear;
+}
+@keyframes spinner {
+  /* from {
+    transform: rotate(0);
+  } */
+  /* from */
+  /* current */
+  /* to */
+  /* transform: rotate(360deg) */
+  /* from {
+    transform: rotate(-360deg);
+  }
+   */
+  /* from {
+    transform: rotate(-150deg);
+  } */
+  /* from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+  /* 0% -> 100% */
+  /* to {
+    transform: scale(1.5);
+    opacity: 0;
+  } */
+}
+/*
+.loader {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader div {
+  position: absolute;
+  left: 0;
+}
+.loader div:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  border-radius: 100rem;
+  background-color: #f7004d;
+  animation: spinner 1s linear infinite;
+  animation-delay: -0.5s;
+}
+.loader div:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  border-radius: 100rem;
+  background-color: #3affff;
+  animation: spinner 1s infinite linear;
+}
+.loader div:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  border-radius: 100rem;
+  background-color: #f7004d;
+  animation: spinner2 1s infinite linear;
+  animation-delay: -0.5s;
+}
+@keyframes spinner {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes spinner2 {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  49.99% {
+    opacity: 1;
+    transform: translateX(80px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+} */
+/* .dots-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+}
+.dots-loading div {
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: #6a5af9;
+  animation: stagger 0.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    alternate;
+  animation-delay: calc(-1 * (0.5 / 4) * var(--delay));
+}
+
+@keyframes stagger {
+  0% {
+    transform: translateY(0);
+  }
+  50%,
+  100% {
+    transform: translateY(20px);
+  }
+} */
+/* Transition */
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 2px;
+  background-color: #6a5af9;
+  z-index: -1;
+  transition: height 0.25s linear, width 0.25s ease-in-out 0.25s;
+  /* transition:
+  transition-property
+  transition-duration
+  transition-easing
+  transition-delay
+  */
+}
+.button:hover:before {
+  height: 100%;
+  width: 100%;
+}
+.button2 {
+  display: inline-block;
+  padding: 15px 50px;
+  margin: 15px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  position: relative;
+  font-size: 20px;
+}
+.button2 span {
+  position: absolute;
+  background-color: #6a5af9;
+  display: block;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.button2 span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+}
+.button2 span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  transition-delay: 0.25s;
+}
+.button2 span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  transition-delay: 0.5s;
+}
+.button2 span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  transition-delay: 0.75s;
+}
+.button2:hover span:nth-child(odd) {
+  width: 100%;
+}
+.button2:hover span:nth-child(even) {
+  height: 100%;
+}
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(106, 90, 249, 0.312);
+  transition: width 0.25s linear 1s;
+  z-index: -1;
+}
+.button2:hover:before {
+  width: 100%;
+}
